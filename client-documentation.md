@@ -14,10 +14,8 @@ The server provides real-time updates from a smart scale system, including weigh
 To connect to the WebSocket, use the following code:
 
 ```javascript
-const ws = new WebSocket('ws://[server-address]:8000/ws');
+const ws = new WebSocket('ws://192.168.1.16:8000/ws');
 ```
-
-Replace `[server-address]` with the actual address of the server.
 
 ## Message Format
 
