@@ -6,8 +6,8 @@ This document provides information on how to connect to and use the Smart Scale 
 
 The server provides real-time updates from a smart scale system, including weight measurements and associated images.
 
-- WebSocket endpoint: `ws://[server-address]:8000/ws`
-- Image serving endpoint: `http://[server-address]:8000/images/[filename]`
+- WebSocket endpoint: `ws://192.168.1.16:8000/ws`
+- Image serving endpoint: `http://192.168.1.16:8000/images/[filename]`
 
 ## Connecting to the WebSocket
 
@@ -56,7 +56,7 @@ To display the image associated with a measurement:
 
 ```javascript
 if (data.image_url) {
-    const imageUrl = `http://[server-address]:8000${data.image_url}`;
+    const imageUrl = `http://192.168.1.16:8000${data.image_url}`;
     // Use this URL to display the image (e.g., in an <img> tag)
 }
 ```
@@ -92,7 +92,7 @@ Here's a basic example of how to implement a client:
     <div id="image-container"></div>
 
     <script>
-        const ws = new WebSocket('ws://[server-address]:8000/ws');
+        const ws = new WebSocket('ws://192.168.1.16:8000/ws');
         
         ws.onmessage = function(event) {
             const data = JSON.parse(event.data);
@@ -108,15 +108,13 @@ Here's a basic example of how to implement a client:
             // Update image
             if (data.image_url) {
                 document.getElementById('image-container').innerHTML = 
-                    `<img src="http://[server-address]:8000${data.image_url}" alt="Smart Scale Image">`;
+                    `<img src="http://192.168.1.16:8000${data.image_url}" alt="Smart Scale Image">`;
             }
         };
     </script>
 </body>
 </html>
 ```
-
-Replace `[server-address]` with the actual address of your server.
 
 ## Notes
 
