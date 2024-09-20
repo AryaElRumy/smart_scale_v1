@@ -116,9 +116,3 @@ Here's a basic example of how to implement a client:
 </html>
 ```
 
-## Notes
-
-- Ensure your client has appropriate error handling and reconnection logic for production use.
-- The server may send updates frequently, so consider implementing debouncing or throttling if needed.
-- For security reasons, implement appropriate authentication and authorization in a production environment.
-
